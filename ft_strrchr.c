@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:30:16 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/08 13:25:36 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/08 14:07:48 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i] != -1)
 	{
 		if (s[i] == c)
-			return ((char*)&s[i]);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (NULL);
