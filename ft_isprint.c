@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 14:35:35 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/09 10:18:10 by humontas         ###   ########.fr       */
+/*   Created: 2024/10/07 13:12:06 by humontas          #+#    #+#             */
+/*   Updated: 2024/10/08 08:12:40 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_isprint(int c)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		 return (0);
-	while (s1[i] != '\0' && s1[i] == s2[i])
-	{
-		if (i < (n - 1))
-			i++;
-		else
-			return (0);
-	}
-	return (s1[i] - s2[i]);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

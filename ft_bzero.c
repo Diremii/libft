@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 08:23:48 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/08 15:28:38 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:34:10 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	if (!s)
-		return (NULL);
+		return ;
 	i = 0;
 	while (i < n)
 	{

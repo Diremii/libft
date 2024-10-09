@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 08:10:34 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/08 15:45:55 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:35:02 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	*ft_memset(void *s, int c, size_t n)
 		*(unsigned char *)(s + i) = (unsigned char) c;
 		i++;
 	}
+	return (s);
 }
