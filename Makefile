@@ -17,7 +17,8 @@ SRCS = ft_atoi.c \
 	ft_memcpy.c \
 	ft_strchr.c \
 	ft_strncmp.c \
-	ft_tolower.c
+	ft_tolower.c \
+	ft_memcmp.c
 OBJS = $(SRCS:.c=.o)
 ARR=ar -rcs
 CFLAGS = -Werror -Wextra -Wall

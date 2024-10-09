@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:12:20 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/09 12:43:36 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:38:33 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

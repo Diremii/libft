@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:35:35 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/09 10:18:10 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:56:14 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	if (n == 0)
-		 return (0);
+		return (0);
 	while (s1[i] != '\0' && s1[i] == s2[i])
 	{
 		if (i < (n - 1))
