@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 09:04:36 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 14:28:16 by humontas         ###   ########.fr       */
+/*   Created: 2024/10/14 13:40:53 by humontas          #+#    #+#             */
+/*   Updated: 2024/10/14 14:26:33 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-void	*ft_calloc(size_t nmeb, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	char	*tab;
-	size_t	i;
+	t_list	*nav;
+	int		count;
 
-	if (!nmeb || !size)
-		return (NULL);
-	tab = malloc(nmeb *(size));
-	if (!tab)
-		return (NULL);
-	while (i < size)
+	nav = lst;
+	count = 0;
+	while (nav)
 	{
-		tab[i] = '\0';
-		i++;
+		nav = nav->next;
+		count++;
 	}
-	return (tab);
+	return (count);
 }
