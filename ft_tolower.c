@@ -6,11 +6,10 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:29 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/09 07:18:58 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/14 09:10:47 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_tolower(int c)

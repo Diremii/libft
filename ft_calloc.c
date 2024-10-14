@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 15:21:24 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/10 12:22:56 by humontas         ###   ########.fr       */
+/*   Created: 2024/10/10 09:04:36 by humontas          #+#    #+#             */
+/*   Updated: 2024/10/14 11:06:19 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
+	char	*tab;
 	size_t	i;
 
-	i = 0;
-	if (!src)
+	if (!nmeb || !size)
 		return (NULL);
-	while (i < n)
+	tab = malloc(nmeb *(size));
+	if (!tab)
+		return (NULL);
+	while (i < size)
 	{
-		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+		tab[i] = '\0';
 		i++;
 	}
+	return (tab);
 }
