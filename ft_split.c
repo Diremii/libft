@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:38:47 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 11:08:55 by humontas         ###   ########.fr       */
+/*   Created: 2024/10/15 10:04:29 by humontas          #+#    #+#             */
+/*   Updated: 2024/10/15 10:07:01 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 static int	count_word(char *s, char c)
 {
 	int	i;
-	int	k;
+	int	j;
 	int	tmp;
 
 	i = 0;
-	k = 0;
+	j = 0;
 	tmp = 0;
 	while (s[i])
 	{
 		if (s[i] != c && tmp == 0)
 		{
 			tmp = 1;
-			k++;
+			j++;
 		}
 		else if (s[i] == c)
 		{
@@ -34,43 +34,46 @@ static int	count_word(char *s, char c)
 		}
 		i++;
 	}
-	return (k);
+	return (j);
 }
 
-static char	*fill_word(char *str, int i, int j)
+static char	*fill_word(char *str, int i, int w_split)
 {
 	char	*substr;
 	int		l;
 
 	l = 0;
-	substr = malloc ((j - i + 1) * sizeof(char));
+	substr = malloc ((i - w_split + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
-	while (i < j)
+	while (w_split < i)
 	{
-		substr[l] = str[i];
-		i++;
+		substr[l] = str[w_split];
+		w_split++;
 		l++;
-		}
+	}
 	return (substr);
 }
-static void	ft_free(char *split)
+
+static void	*ft_free(char **split, int j)
 {
 	int	i;
 
 	i = 0;
-	while (split[i])
+	while (i < j)
 	{
-		free(split);
+		free(split[j]);
 		i++;
-		}
+	}
 	free(split);
+	return (NULL);
 }
-static void	init_var(size_t *i, int *j, int *k)
+
+static void	init_var(size_t *i, int *j, int *w_split)
 {
 	*i = 0;
-	*j = -1;
-	*k = 0;
+	*j = 0;
+	*w_split = -1;
 }
 
 char	**ft_split(const char *s, char c)
@@ -78,23 +81,23 @@ char	**ft_split(const char *s, char c)
 	char	**split;
 	size_t	i;
 	int		j;
-	int		k;
+	int		w_split;
 
-	int_var(&i, &j, &k);
-	split = ft_calloc((count_word((char *)s, c) + 1), sizeof(char *));
+	init_var(&i, &j, &w_split);
+	split = calloc((count_word((char *)s, c) + 1), sizeof(char *));
 	if (!split)
 		return (NULL);
 	while (i <= ft_strlen(s))
 	{
-		if (s[i] != c && j < 0)
-			j = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && j >= 0)
+		if (s[i] != c && w_split < 0)
+			w_split = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && w_split >= 0)
 		{
-		split[k] = fill_word((char *)s, j, i);
-			if (!(split[k]))
-				return (NULL);
-			j = -1;
-			k++;
+			split[j] = fill_word((char *)s, i, w_split);
+			if (!(split[j]))
+				ft_free(split, j);
+			w_split = -1;
+			j++;
 		}
 		i++;
 	}

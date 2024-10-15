@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:46:20 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 14:29:12 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:21:50 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-void			*content;
-struct s_list	*next;
+	void			*content;
+	struct s_list	*next;
 }				t_list;
 
-t_list	*ft_lstnew(void    *content);
+t_list	*ft_lstnew(void	*content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize_bonus(t_list *list);
 t_list	*ft_lstlast(t_list *lst);

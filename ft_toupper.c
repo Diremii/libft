@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:37:33 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/08 12:33:26 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/15 13:21:45 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'b')
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }

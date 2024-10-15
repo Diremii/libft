@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:24:46 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/15 12:32:29 by humontas         ###   ########.fr       */
+/*   Created: 2024/10/15 10:29:55 by humontas          #+#    #+#             */
+/*   Updated: 2024/10/15 11:22:14 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
+	t_list	*list;
+	t_list	*obj;
 
-	if (!s || !f)
-		return ;
-	i = 0;
-	while (s[i])
+	if (!lst || !f || !del)
+		return (NULL);
+	list = NULL;
+	while (lst)
 	{
-		f(i, s + i);
-		i++;
+		obj = ft_lstnew(f(lst->content));
+		if (!obj)
+		{
+			ft_lstclear(&list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&list, obj);
+		lst = lst->next;
 	}
+	return (list);
 }

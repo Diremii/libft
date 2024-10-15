@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:04:36 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 14:28:16 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:31:58 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	*ft_calloc(size_t nmeb, size_t size)
 	tab = malloc(nmeb *(size));
 	if (!tab)
 		return (NULL);
+	i = 0;
 	while (i < size)
 	{
 		tab[i] = '\0';
