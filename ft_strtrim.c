@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 08:25:58 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 11:08:06 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:46:32 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	while (s1[start] && ft_skip((char)s1[start], set))
 		start++;
-	while (s1[end] && ft_skip((char)s1[end], set))
+	while (end > start && ft_skip((char)s1[end - 1], set))
 		end--;
 	str = malloc(end - start + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (start <= end)
+	while (start < end)
 	{
 		str[i] = s1[start];
 		start++;

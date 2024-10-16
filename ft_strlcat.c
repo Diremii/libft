@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 08:48:42 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 09:04:27 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/16 10:26:49 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	if (size == 0)
-	{
-		i = ft_strlen(src);
-		return (i);
-	}
-	while (dst[i])
+	while (dst[i] && i < size)
 		i++;
-	while (src[j])
+	while (src[j] && (i + j + 1) < size)
 	{
-		dst[i] = src[j];
-		i++;
+		dst[i + j] = src[j];
 		j++;
 	}
-	dst[i] = '\0';
-	j = ft_strlen(dst) + ft_strlen(src);
-	return (j);
+	if (i < size)
+		dst[i + j] = '\0';
+	j = ft_strlen(src);
+	return (i + j);
 }

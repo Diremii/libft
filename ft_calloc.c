@@ -6,27 +6,23 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:04:36 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/15 12:31:58 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/16 09:49:47 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmeb, size_t size)
+void    *ft_calloc(size_t nmemb, size_t size)
 {
-	char	*tab;
-	size_t	i;
+	void			*tab;
+	long int		i;
 
-	if (!nmeb || !size)
+	i = nmemb * size;
+	if (i < 0 || ((int)nmemb < 0 && (int)size < 0))
 		return (NULL);
-	tab = malloc(nmeb *(size));
-	if (!tab)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		tab[i] = '\0';
-		i++;
-	}
+	tab = malloc(nmemb * size);
+	if (tab)
+		ft_memset(tab, '\0', nmemb * size);
 	return (tab);
+
 }

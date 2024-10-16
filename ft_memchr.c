@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:13:41 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/09 12:56:56 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/16 08:31:53 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*(unsigned char *)(s + i) == (unsigned char)c)
-			return ((void *)(s + 1));
+			return ((void *)(s + i));
 		i++;
 	}
 	return (NULL);

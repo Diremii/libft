@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:03:48 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/09 11:11:16 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/16 10:59:10 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	res = 0;
 	sign = 1;
-	if (nptr[i] == '+')
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
 		i++;
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		sign *= -1;
+		if (nptr[i] == '-')
+			sign = -1;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
