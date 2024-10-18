@@ -1,69 +1,51 @@
-NAME = libft.a
-SRCS = main.c \
-	ft_isascii.c \
-	ft_memcpy.c \
-	ft_putstr_fd.c \
-	ft_strlcat.c \
-	ft_strrchr.c \
-	ft_atoi.c \
-	ft_isdigit.c \
-	ft_memmove.c \
-	ft_split.c \
-	ft_strlcpy.c \
-	ft_strtrim.c \
-	ft_bzero.c \
-	ft_isprint.c \
-	ft_memset.c \
-	ft_strchr.c \
-	ft_strlen.c \
-	ft_substr.c \
-	ft_calloc.c \
-	ft_itoa.c \
-	ft_putchar_fd.c \
-	ft_strdup.c \
-	ft_strmapi.c \
-	ft_tolower.c \
-	ft_isalnum.c \
-	ft_memchr.c \
-	ft_putendl_fd.c \
-	ft_striteri.c \
-	ft_strncmp.c \
-	ft_toupper.c \
-	ft_isalpha.c \
-	ft_memcmp.c \
-	ft_putnbr_fd.c \
-	ft_strjoin.c \
-	ft_strnstr.c
-SRCS_BONUS = main.c \
-	ft_lstnew_bonus.c \
-	ft_lstadd_front_bonus.c \
-	ft_lstsize_bonus.c \
-	ft_lstlast_bonus.c \
-	ft_lstadd_back_bonus.c \
-	ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c \
-	ft_lstiter_bonus.c \
-	ft_lstmap_bonus.c
-OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-ARR=ar -rcs
-CFLAGS = -Werror -Wextra -Wall
+NAME=libft.a
 
-all : $(NAME) $(OBJS)
-$(NAME) : $(OBJS)
-	cc $(CFLAGS) $(OBJS) -o $(NAME)
+MY_SOURCES=ft_atoi.c ft_isdigit.c ft_memmove.c ft_split.c ft_strlcpy.c \
+            ft_strtrim.c ft_bzero.c ft_isprint.c ft_memset.c ft_strchr.c \
+            ft_strlen.c ft_substr.c ft_calloc.c ft_itoa.c ft_putchar_fd.c \
+            ft_strdup.c ft_strmapi.c ft_tolower.c ft_isalnum.c ft_memchr.c \
+            ft_putendl_fd.c ft_striteri.c ft_strncmp.c ft_toupper.c \
+            ft_isalpha.c ft_memcmp.c ft_putnbr_fd.c ft_strjoin.c ft_strnstr.c \
+            ft_isascii.c ft_memcpy.c ft_putstr_fd.c ft_strlcat.c ft_strrchr.c
+        
+BONUS= ft_lstnew_bonus.c \
+       ft_lstadd_front_bonus.c \
+       ft_lstsize_bonus.c \
+       ft_lstlast_bonus.c \
+       ft_lstadd_back_bonus.c \
+       ft_lstdelone_bonus.c \
+       ft_lstclear_bonus.c \
+       ft_lstiter_bonus.c \
+       ft_lstmap_bonus.c
 
-bonus : $(OBJS_BONUS)
+ALL_SOURCES=$(MY_SOURCES) $(BONUS)
 
- : $(OBJS_BONUS)
-	cc $(CFLAGS) -o $(NAME) $(OBJS_B)
+MY_OBJECTS=$(ALL_SOURCES:.c=.o)
 
-clean :
-	rm -f $(OBJS) $(OBJS_BONUS)
+RM=rm -f
 
-fclean : clean
-	rm -f $(NAME)
+CC=cc
+ARRC=ar -rcs
+FLAGS=-Wall -Werror -Wextra -g
 
-re : fclean all
+all: $(NAME)
 
-.PHONY: all clean fclean re bonus
+$(NAME): $(MY_OBJECTS)
+	$(ARRC) $(NAME) $(MY_OBJECTS)
+
+bonus: $(BONUS:.c=.o)
+	$(ARRC) $(NAME) $^
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean: 
+	$(RM) $(MY_OBJECTS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all bonus clean fclean re
+

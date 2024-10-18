@@ -6,11 +6,11 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:29:55 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/15 11:22:14 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 08:57:49 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

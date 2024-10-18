@@ -6,11 +6,11 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:40:53 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 14:26:33 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 08:57:40 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

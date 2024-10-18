@@ -6,13 +6,13 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:17:25 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/10 10:30:34 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:46:56 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char	*dest, const char *src)
+static char	*ft_strcpy(char	*dest, const char *src)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:58:57 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/16 08:36:30 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:10:08 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

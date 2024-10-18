@@ -6,13 +6,13 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:04:36 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/16 09:49:47 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:05:28 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*tab;
 	long int		i;
@@ -24,5 +24,4 @@ void    *ft_calloc(size_t nmemb, size_t size)
 	if (tab)
 		ft_memset(tab, '\0', nmemb * size);
 	return (tab);
-
 }

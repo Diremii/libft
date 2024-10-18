@@ -6,7 +6,7 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 07:29:55 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/15 14:59:37 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:10:50 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (i < n)
 		{
-		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
 			i++;
 		}
 	}

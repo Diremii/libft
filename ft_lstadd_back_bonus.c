@@ -6,18 +6,23 @@
 /*   By: humontas <humontas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:00:04 by humontas          #+#    #+#             */
-/*   Updated: 2024/10/14 14:24:35 by humontas         ###   ########.fr       */
+/*   Updated: 2024/10/18 09:43:42 by humontas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*nav;
 
-	nav = ft_lstlast(*lst);
-	if (!nav)
+	if (!new)
+		return ;
+	if (!*lst)
+	{
 		*lst = new;
+		return ;
+	}
+	nav = ft_lstlast(*lst);
 	nav->next = new;
 }
